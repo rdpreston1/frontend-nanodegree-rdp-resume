@@ -1,4 +1,4 @@
-//a place to store and display information and contact methods for the subject of the resume
+//information and contact methods for resume author
 var bio = {
 
   "name"      : "Robert Preston",
@@ -102,7 +102,7 @@ var work = {
     "description" : "Support operations for NEC's digital switching systems deployed across the USA. Performed troubleshooting and developed solutions utilizing expansive range of support tools."
   }
   ],
-//function to format and output work history to web page
+  //function to format and output work history
   "display" : function(){
 
     for (job in work.jobs) {
@@ -126,7 +126,7 @@ var work = {
   }
 }    
 
-//    
+//online schools included with brick and mortar    
 var education = {
 
   "schools" : [
@@ -165,6 +165,7 @@ var education = {
   }
   ],
 
+  //formatting and displaying education
   "display" : function() {
     
     for (school in education.schools) {
@@ -213,6 +214,7 @@ var education = {
   }
 }
 
+//really just to play for now, these will be future projects
 var projects = {
 
   "websites" : [
@@ -248,12 +250,12 @@ var projects = {
   }
   ],
 
+  //formatting and displaying projects and images, images are fixed size thumbnails
   "display" : function() {
 
       $("#projects").append(HTMLprojectStart); 
 
     for (sites in projects.websites) {
-//      $("#projects").append(HTMLprojectStart); 
 
       var formattedTitle = HTMLprojectTitle.replace("%data%", projects.websites[sites].title);
       $(".project-entry:last").append(formattedTitle);
@@ -271,6 +273,8 @@ var projects = {
     }
   }  
 }
+
+//Start calling functions to display resume
 
 //display introductory information 
 bio.display();
